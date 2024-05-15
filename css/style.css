@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+ 
+body{
+ background-color: #1f106b;
+ color: white;
+ font-family: kanit;
+}
+ 
+header{
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "logo . . . . . nav nav nav";
+}
+ 
+.logo {
+    grid-area: logo;
+}
+ 
+nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+ 
+nav a{
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    border-radius: 10px;
+    height: 5vh;
+    padding: 1vh 1vw;
+}
+ 
+nav>a:first-child{
+    background-color: #f03f3a;
+}
+ 
+nav>a:nth-child(2){
+    background-color: #fcc746;
+}
+ 
+nav>a:nth-child(3){
+    background-color: #00b287;
+}
+ 
+.slideshow {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+ 
+.slideshow img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+}
+ 
+footer{
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "pixel pixel . . cr cr cr cr cr . social social social";
+}
+ 
+footer a {
+    text-decoration: none;
+    color: white;
+}
+ 
+.pixel {
+    grid-area: pixel;
+    background-color: #00c0c0;
+    border-radius: 10px;
+    width: 140px;
+    padding: 1vh 1vw;
+}
+ 
+.copyright{
+    grid-area: cr;
+}
+ 
+.socials{
+    grid-area: social;
+}
+ 
+.socials>a{
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 1vh 1vw;
+}
+ 
+.socials>a:first-child{
+    background-color: #f03f3a;
+}
+ 
+.socials>a:nth-child(2){
+    background-color: #fcc746;
+}
+ 
+.socials>a:nth-child(3){
+    background-color: #00b287;
+}
