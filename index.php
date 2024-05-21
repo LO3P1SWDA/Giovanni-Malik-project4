@@ -37,7 +37,48 @@
                                 alt="Game 3" onclick="openGamePage('game3.html')">
                         <img src="https://1000logos.net/wp-content/uploads/2023/05/Wordle-Emblem.png" alt="Game 4"
                                 onclick="openGamePage('game4.html')">
-                </div>
+                </div><br><br><br>
+
+                <?php
+                try {
+                        $conn = new mysqli("localhost", "root", "", "pixelplayground");
+                } catch (Exception $e) {
+                        $error = $e->getMessage();
+                        echo $error;
+                }
+
+                $sql = "
+    SELECT 
+        g.game_name AS 'Game Name', 
+        u.gebruikersnaam AS 'Username', 
+        h.highscore AS 'Highscore', 
+        h.timestamp AS 'Timestamp'
+    FROM 
+        highscores h
+    JOIN 
+        games g ON h.game_id = g.id
+    JOIN 
+        gebruikers u ON h.gebruiker_id = u.id
+    ORDER BY 
+        h.timestamp DESC 
+    LIMIT 5
+";
+
+                try {
+                        if ($result = $conn->query($sql)) {
+                                echo "<p class='ScoreboardTitle'>LAATST BEHAALDE HIGHSCORES:</p><br>";
+                                while ($row = $result->fetch_assoc()) {
+                                        echo "<section class='Scoreboard'><p>Game: " . $row['Game Name'] . " - Username: " . $row['Username'] . " - Highscore: " . $row['Highscore'] . " - Timestamp: " . $row['Timestamp'] . "</p></section><br>";
+                                }
+                                $result->close();
+                        }
+                } catch (Exception $e) {
+                        $error = $e->getMessage();
+                        echo $error;
+                }
+
+                $conn->close();
+                ?>
         </main>
 
         <footer>
