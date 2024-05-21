@@ -12,11 +12,13 @@
     <script src="../js/home.js" defer></script>
 </head>
 
+</head>
+
 <body>
     <header>
         <img class="logo" src="https://static.wixstatic.com/media/72c1e2_3044305cde3e46d19101e9905d33a180~mv2.png/v1/fill/w_370,h_230,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Pixel%20Playground%20_Logo%20full%20colors%20%2B%20elements%20NO%20R.png" alt="logo">
         <nav>
-            <a href="pages/login.php">Login</a>
+            <a href="../pages/login.php">Login</a>
             <a href="#">Profiel</a>
             <a href="#">Games</a>
         </nav>
