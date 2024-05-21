@@ -78,7 +78,7 @@ footer a {
     grid-area: pixel;
     background-color: #00c0c0;
     border-radius: 10px;
-    width: 140px;
+    width: 60%;
     padding: 1vh 1vw;
 }
 
@@ -106,4 +106,23 @@ footer a {
 
 .socials>a:nth-child(3) {
     background-color: #00b287;
+}
+
+.ScoreboardTitle{
+    background-color: #fcc746;
+    border-radius: 10px;
+    width: 17%;
+    padding: 1vh 1vw;
+    margin-left: 38vw;
+}
+
+.Scoreboard{
+    display: flex;
+    flex-direction: column;   
+    justify-content: center;
+    align-items: center;
+    background-color: #ff803c;
+    border-radius: 10px;
+    width: 50%;
+    margin-left: 25vw;
 }
