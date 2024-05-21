@@ -1,3 +1,5 @@
+// Slideshow Homepagina
+
 const fotos = document.getElementsByClassName('slideshow')[0].getElementsByTagName('img');
 let currentFotoIndex = 0;
  
@@ -31,3 +33,4 @@ function switchSlide() {
  
 setInterval(switchSlide, 5000);
  
+
