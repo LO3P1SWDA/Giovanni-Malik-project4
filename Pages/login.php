@@ -123,7 +123,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($
         if (password_verify($password, $hashed_password)) {
             $_SESSION['user_id'] = $id;
             $_SESSION['username'] = $row['gebruikersnaam'];
-            echo "Login successful!"; // You can redirect to a dashboard or homepage here
+            header("Location: profile.php");
+            echo "test";
+            exit();
         } else {
             echo "Invalid password.";
         }
@@ -137,7 +139,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($
 
 // Close the connection
 $conn->close();
+print_r($_SESSION);
 ?>
 
 <?php include "../headerNfooter/footer.php";?>
-
