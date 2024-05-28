@@ -6,138 +6,33 @@
         <div class="signup">
             <form action="login.php" method="POST">
                 <label for="chk" aria-hidden="true">Sign up</label>
-                <input type="text" name="username" placeholder="User name" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                <input type="text" name="username" placeholder="User name" class="input-field" required>
+                <input type="password" name="password" placeholder="Password" class="input-field" required>
+                <input type="password" name="confirm_password" placeholder="Confirm Password" class="input-field" required>
+                <div class="secret-question">
                 <select name="secret_question" required>
                     <option value="" disabled selected>Select a secret question</option>
                     <option value="pet">What is the name of your first pet?</option>
                     <option value="school">What is the name of your primary school?</option>
                     <option value="birthplace">In what city were you born?</option>
                 </select>
-                <input type="text" name="secret_answer" placeholder="Answer to secret question" required>
+                </div>
+                <input type="text" name="secret_answer" placeholder="Answer to secret question" class="input-field" required>
                 <button type="submit">Sign up</button>
             </form>
         </div>
         <div class="login">
-            <form action="login.php" method="POST">
+            <form action="login.php" method="POST" class="login-form">
                 <label for="chk" aria-hidden="true">Login</label>
-                <input type="text" name="username" placeholder="Username" required>
-                <input type="password" name="password" placeholder="Password" required>
-                <button type="submit">Login</button>
+                <input type="text" name="username" placeholder="Username" class="input-login" required>
+                <input type="password" name="password" placeholder="Password" class="input-login" required>
+                <button type="submit">Login</button class="button-login">
+                <div class="forgot-password">
+                <a href="/wachtwoord-vergeten">Wachtwoord vergeten?</a>
+            </div>
             </form>
-</div>
-</div>
+        </div>
+    </div>
 </body>
-
-<?php
-// Start the session
-
-
-// Enable MySQLi error reporting
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-
-// Establish a connection to the database
-$conn = new mysqli("localhost", "root", "", "pixelplayground");
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Handle the registration form submission
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($_POST['password']) && isset($_POST['confirm_password'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password'];
-    $secret_question = $_POST['secret_question'];
-    $secret_answer = $_POST['secret_answer'];
-
-    // Check if passwords match
-    if ($password !== $confirm_password) {
-        echo "Passwords do not match!";
-        exit();
-    }
-
-    // Hash the password and secret answer
-    $password_hashed = password_hash($password, PASSWORD_BCRYPT);
-    $secret_answer_hashed = password_hash($secret_answer, PASSWORD_BCRYPT
-);
-
-// Prepare the SQL query using prepared statements
-$stmt = $conn->prepare("INSERT INTO gebruikers (gebruikersnaam, wachtwoord, secret_question, secret_answer) VALUES (?, ?, ?, ?)");
-$stmt->bind_param("ssss", $username, $password_hashed, $secret_question, $secret_answer_hashed);
-
-// Execute the query
-if ($stmt->execute()) {
-    // Redirect to the login page after successful registration
-    header("Location: login.php");
-    exit();
-} else {
-    echo "Error: " . $stmt->error;
-}
-
-// Close the statement
-$stmt->close();
-}
-
-// Close the connection
-$conn->close();
-?>
-
-<?php
-// Start the session
-session_start();
-
-// Enable MySQLi error reporting
-mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-
-// Establish a connection to the database
-$conn = new mysqli("localhost", "root", "", "pixelplayground");
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-// Handle the login form submission
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($_POST['password'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    // Prepare the SQL query using prepared statements
-    $stmt = $conn->prepare("SELECT id, gebruikersnaam, wachtwoord FROM gebruikers WHERE gebruikersnaam = ?");
-    $stmt->bind_param("s", $username);
-
-    // Execute the query
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        // Fetch the user data
-        $row = $result->fetch_assoc();
-        $id = $row['id'];
-        $hashed_password = $row['wachtwoord'];
-
-        // Verify the password
-        if (password_verify($password, $hashed_password)) {
-            $_SESSION['user_id'] = $id;
-            $_SESSION['username'] = $row['gebruikersnaam'];
-            echo "Login successful!"; // You can redirect to a dashboard or homepage here
-        } else {
-            echo "Invalid password.";
-        }
-    } else {
-        echo "No user found with that username.";
-    }
-
-    // Close the statement
-    $stmt->close();
-}
-
-// Close the connection
-$conn->close();
-?>
-
 <?php include "../headerNfooter/footer.php";?>
 
