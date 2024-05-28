@@ -31,9 +31,12 @@
                 <a href="/wachtwoord-vergeten">Wachtwoord vergeten?</a>
             </div>
             </form>
-</div>
-</div>
+        </div>
+    </div>
 </body>
+
+
+=======
 
 <?php
 // Start the session
@@ -148,3 +151,4 @@ print_r($_SESSION);
 ?>
 
 <?php include "../headerNfooter/footer.php";?>
+

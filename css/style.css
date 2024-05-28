@@ -144,6 +144,7 @@ body {
 }
 
 
+
 #chk {
     display: none;
 }
@@ -156,7 +157,6 @@ body {
 
 label {
     color: #fff;
-    font-size: 2.3em;
     justify-content: center;
     display: flex;
     margin: 50px;
@@ -186,7 +186,6 @@ label {
     outline: none;
     border-radius: 5px;
 }
-
 .input-login {
     width: 60%;
     height: 30px;
@@ -230,7 +229,6 @@ button {
     transition: .2s ease-in;
     cursor: pointer;
 }
-
 .button-login {
     width: 60%;
     height: 60px;
@@ -278,7 +276,11 @@ button:hover {
 .forgot-password{
     justify-content: center;
     text-align: center;
+    font-size: 2.3em;
 }
+
+
+
 
 .ScoreboardTitle {
     background-color: #fcc746;
