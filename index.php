@@ -19,7 +19,7 @@
                         alt="logo">
                 <nav>
                         <a href="pages/login.php">Login</a>
-                        <a href="#">Profiel</a>
+                        <a href="pages/profile.php">Profiel</a>
                         <a href="#">Games</a>
                 </nav>
         </header>
