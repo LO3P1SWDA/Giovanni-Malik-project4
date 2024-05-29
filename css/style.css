@@ -276,7 +276,6 @@ button:hover {
 .forgot-password{
     justify-content: center;
     text-align: center;
-    font-size: 2.3em;
 }
 
 
@@ -299,4 +298,39 @@ button:hover {
     border-radius: 10px;
     width: 50%;
     margin-left: 25vw;
+}
+
+#board {
+    height: 540px;
+    width: 630px;
+    background-color: rgb(106, 195, 243);
+    border: 10px solid rgb(38, 64, 132);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tile {
+    height: 70px;
+    width: 70px;
+    margin: 5px;
+    background-color: white;
+    border-radius: 50%;
+    border: 5px solid rgb(38, 64, 132);
+}
+
+.red-piece {
+    background-color: red;
+}
+
+.yellow-piece {
+    background-color: yellow;
+}
+
+#restart-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 150px;
 }
