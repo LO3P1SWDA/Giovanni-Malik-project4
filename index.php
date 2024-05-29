@@ -33,8 +33,8 @@
                                 alt="Game 1" onclick="openGamePage('game1.html')">
                         <img src="https://cdn.iconscout.com/icon/free/png-256/free-hang-1551091-1315157.png"
                                 alt="Game 2" onclick="openGamePage('game2.html')">
-                        <img src="https://kmtools.com/cdn/shop/products/Connect4CoverPic.png?v=1666200673&width=3333"
-                                alt="Game 3" onclick="openGamePage('game3.html')">
+                                <img src="https://kmtools.com/cdn/shop/products/Connect4CoverPic.png?v=1666200673&width=3333"
+                                alt="Game 3" onclick="openGamePage('Pages/4-op-een-rij.php')">
                         <img src="https://1000logos.net/wp-content/uploads/2023/05/Wordle-Emblem.png" alt="Game 4"
                                 onclick="openGamePage('game4.html')">
                 </div><br><br><br>

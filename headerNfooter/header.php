@@ -10,6 +10,8 @@
     <title>Project</title>
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/home.js" defer></script>
+    <script src="../js/login.js" defer></script>
+    <script src="../js/4-op-een-rij.js" defer></script>
 </head>
 
 </head>
