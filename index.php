@@ -10,6 +10,7 @@
         <title>Project</title>
         <link rel="stylesheet" href="css/style.css">
         <script src="js/home.js" defer></script>
+        <script src="js/vrienden.js" defer></script>
 </head>
 
 <body>
@@ -20,6 +21,7 @@
                 <nav>
                         <a href="pages/login.php">Login</a>
                         <a href="pages/profile.php">Profiel</a>
+                        <a href="pages/vrienden.php">Vrienden</a>
                         <a href="#">Games</a>
                 </nav>
         </header>

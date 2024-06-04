@@ -11,7 +11,7 @@ header {
     grid-template-columns: repeat(9, 1fr);
     grid-template-rows: auto;
     grid-template-areas:
-        "logo . . . . . nav nav nav";
+        "logo . . . . nav nav nav nav";
 }
 
 .logo {
@@ -44,6 +44,10 @@ nav>a:nth-child(2) {
 
 nav>a:nth-child(3) {
     background-color: #00b287;
+}
+
+nav>a:nth-child(4) {
+    background-color: #b2006b;
 }
 
 .slideshow {
@@ -216,4 +220,106 @@ button:hover {
     border-radius: 10px;
     width: 50%;
     margin-left: 25vw;
+}
+
+.WachtwoordSwitch label{
+    color: #fff;
+    font-size: 20px;
+    justify-content: center;
+    display: flex;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+.WachtwoordSwitch input{
+     width: 60%;
+    height: 10px;
+    background: #e0dede;
+    justify-content: center;
+    display: flex;
+    margin: 20px auto;
+    padding: 12px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.wSwitch{
+    background: #10c08b;
+    border-radius: 10px;
+    padding: 1vh 1vw;
+    text-decoration: none;
+    color: white;
+}
+
+.gSwitch{
+    background: #c0104e;
+    border-radius: 10px;
+    padding: 1vh 1vw;
+    text-decoration: none;
+    color: white;
+}
+
+.voegVriend{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.voegBtn{
+    background-color: #859d0e;
+    width: 350px;
+    margin-left: 50px;
+}
+
+.myV{
+    background-color: #c4f435;
+    border-radius: 10px;
+    padding: 1vh 1vw;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.ProfileHS{
+    background-color: #e73415;
+    border-radius: 10px;
+    padding: 1vh 1vw;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;
+    max-width: 35%;
+}
+
+.verzoek{
+    background-color: #e73415;
+    border-radius: 10px;
+    padding: 1vh 1vw;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 20px;  
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30%;
+}
+
+.Friend{
+    background-color: #bc30ae;
+    border-radius: 10px;
+    padding: 1vh 1vw;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.vwVriend{
+    background-color: #0e9d72;
+    width: 350px;
+    margin-left: 50px;
 }
