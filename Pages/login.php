@@ -27,16 +27,10 @@
                 <input type="text" name="username" placeholder="Username" class="input-login" required>
                 <input type="password" name="password" placeholder="Password" class="input-login" required>
                 <button type="submit">Login</button class="button-login">
-                <div class="forgot-password">
-                <a href="/wachtwoord-vergeten">Wachtwoord vergeten?</a>
-            </div>
             </form>
         </div>
     </div>
 </body>
-
-
-=======
 
 <?php
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);

@@ -4,6 +4,7 @@ body {
     background-color: #1f106b;
     color: white;
     font-family: 'Kanit', sans-serif;
+    overflow-x: hidden;
 }
 
 header {
@@ -122,15 +123,6 @@ footer a {
     box-shadow: 5px 20px 50px #000;
 }
 
-body {
-    display: grid;
-    place-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #1f106b; 
-    font-family: 'Kanit', sans-serif; 
-}
-
 .login_body {
     display: grid;
     place-items: center;
@@ -233,23 +225,6 @@ button {
     transition: .2s ease-in;
     cursor: pointer;
 }
-.button-login {
-    width: 60%;
-    height: 60px;
-    margin: 10px auto;
-    justify-content: center;
-    display: block;
-    color: #fff;
-    background: #573b8a;
-    font-size: 1em;
-    font-weight: bold;
-    margin-top: 30px;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    transition: .2s ease-in;
-    cursor: pointer;
-}
 
 button:hover {
     background: #6d44b8;
@@ -276,14 +251,6 @@ button:hover {
 #chk:checked ~ .signup label {
     font-size: 2.3em;
 }
-
-.forgot-password{
-    justify-content: center;
-    text-align: center;
-}
-
-
-
 
 .ScoreboardTitle {
     background-color: #fcc746;
@@ -440,4 +407,12 @@ button:hover {
     padding: 10px 20px;
     font-size: 16px;
     width: 150px;
+}
+
+#searchBox{
+    position: relative;
+    left: 35%;
+    padding: 2vh 2vw;
+    width: 30%;
+    border-radius: 15px;
 }

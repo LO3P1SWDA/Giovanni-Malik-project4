@@ -24,9 +24,7 @@ function switchSlide() {
     fotos[currentFotoIndex].style.display = 'none';
     fotos[nextFotoIndex].style.display = 'block';
  
-    currentFotoIndex = nextFotoIndex; // Update currentFotoIndex
- 
-    // Don't forget to update currentFotoIndex after switching
+    currentFotoIndex = nextFotoIndex; 
 }
  
 setInterval(switchSlide, 5000);
