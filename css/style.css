@@ -122,6 +122,33 @@ footer a {
     box-shadow: 5px 20px 50px #000;
 }
 
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1f106b; 
+    font-family: 'Kanit', sans-serif; 
+}
+
+.login_body {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.main_login {
+    position: relative;
+    width: 650px;
+    height: 600px;
+    background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/cover;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+}
+
+
+
 #chk {
     display: none;
 }
@@ -134,7 +161,6 @@ footer a {
 
 label {
     color: #fff;
-    font-size: 2.3em;
     justify-content: center;
     display: flex;
     margin: 50px;
@@ -143,9 +169,43 @@ label {
     transition: .5s ease-in-out;
 }
 
-input {
+.signup label {
+    font-size: 1.8em;
+}
+
+.login label {
+    font-size: 2.3em;
+    color: #573b8a;
+}
+
+.input-field {
     width: 60%;
     height: 10px;
+    background: #e0dede;
+    justify-content: center;
+    display: flex;
+    margin: 20px auto;
+    padding: 12px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+.input-login {
+    width: 60%;
+    height: 30px;
+    background: #e0dede;
+    justify-content: center;
+    display: flex;
+    margin: 20px auto;
+    padding: 12px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.secret-question select {
+    width: 64%;
+    height: 38px;
     background: #e0dede;
     justify-content: center;
     display: flex;
@@ -173,6 +233,23 @@ button {
     transition: .2s ease-in;
     cursor: pointer;
 }
+.button-login {
+    width: 60%;
+    height: 60px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #fff;
+    background: #573b8a;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    cursor: pointer;
+}
 
 button:hover {
     background: #6d44b8;
@@ -182,26 +259,31 @@ button:hover {
     height: 560px;
     background: #eee;
     border-radius: 60% / 10%;
-    transform: translateY(-180px);
+    transform: translateY(-580px);
     transition: .8s ease-in-out;
 }
 
-.login label {
-    color: #573b8a;
-    transform: scale(.6);
-}
+
 
 #chk:checked ~ .login {
-    transform: translateY(-560px);
+    transform: translateY(-200px);
 }
 
 #chk:checked ~ .login label {
-    transform: scale(1);
+    font-size: 2.8em;
 }
 
 #chk:checked ~ .signup label {
-    transform: scale(.6);
+    font-size: 2.3em;
 }
+
+.forgot-password{
+    justify-content: center;
+    text-align: center;
+}
+
+
+
 
 .ScoreboardTitle {
     background-color: #fcc746;
@@ -221,6 +303,7 @@ button:hover {
     width: 50%;
     margin-left: 25vw;
 }
+
 
 .WachtwoordSwitch label{
     color: #fff;
@@ -322,4 +405,38 @@ button:hover {
     background-color: #0e9d72;
     width: 350px;
     margin-left: 50px;
+=======
+#board {
+    height: 540px;
+    width: 630px;
+    background-color: rgb(106, 195, 243);
+    border: 10px solid rgb(38, 64, 132);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tile {
+    height: 70px;
+    width: 70px;
+    margin: 5px;
+    background-color: white;
+    border-radius: 50%;
+    border: 5px solid rgb(38, 64, 132);
+}
+
+.red-piece {
+    background-color: red;
+}
+
+.yellow-piece {
+    background-color: yellow;
+}
+
+#restart-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 150px;
 }
