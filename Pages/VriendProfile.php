@@ -7,16 +7,13 @@ if ($conn->connect_error) {
     die("Verbinding mislukt: " . $conn->connect_error);
 }
 
-// Controleer of gebruiker ingelogd is
 if (!isset($_SESSION['username'])) {
     header('Location: login.php');
     exit();
 }
 
-// Haal vriend_id op uit URL
 $friend_id = $_GET['friend_id'] ?? 0;
 
-// Haal de gebruikersnaam van de vriend op
 $sql = "SELECT gebruikersnaam FROM gebruikers WHERE id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $friend_id);
@@ -72,7 +69,6 @@ if ($current_game != '') {
 }
 $stmt->close();
 
-// Haal badges van de vriend op
 $sql = "SELECT b.naam, b.image 
         FROM gebruiker_badge gb
         JOIN badges b ON gb.badge_id = b.id

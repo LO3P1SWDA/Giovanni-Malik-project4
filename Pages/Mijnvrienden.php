@@ -7,7 +7,6 @@ if ($conn->connect_error) {
     die("Verbinding mislukt: " . $conn->connect_error);
 }
 
-// Afhandelen van uitlogverzoek
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['logout']) && $_POST['logout'] == '1') {
     unset($_SESSION['username']);
     unset($_SESSION['user_id']);
@@ -16,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['logout']) && $_POST['l
     exit();
 }
 
-// Controleer of gebruiker ingelogd is
 if (isset($_SESSION['username'])) {
     echo "<h1>Welkom " . '<strong>' . $_SESSION['username'] . " !</strong></h1>";
 } else {
@@ -24,7 +22,6 @@ if (isset($_SESSION['username'])) {
     exit();
 }
 
-// Functie om vrienden te verwijderen
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_friend'])) {
     $friend_id = $_POST['friend_id'];
     $user_id = $_SESSION['user_id'];
@@ -35,7 +32,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete_friend'])) {
     $stmt->close();
 }
 
-// Haal vriendenlijst op
 $user_id = $_SESSION['user_id'];
 $sql = "SELECT DISTINCT g.id AS vriend_id, g.gebruikersnaam 
         FROM gebruikers g 

@@ -3,7 +3,6 @@
     <input type="text" id="searchBox" placeholder="Zoek naar een vriend...">
     <ul id="userList">
         <?php
-        // Verbinding maken met de database en gebruikers ophalen
         $conn = new mysqli("localhost", "root", "", "pixelplayground");
         if ($conn->connect_error) {
             die("Verbinding mislukt: " . $conn->connect_error);
