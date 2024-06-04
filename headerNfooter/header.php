@@ -9,9 +9,11 @@
     <meta name="keywords" content="project 4, opdracht, Mbo, Rijnland, Leiden">
     <title>Project</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/home.js" defer></script>
+    <script src="../js/home.js" defer></script>    
+    <script src="../js/vrienden.js" defer></script>    
     <script src="../js/login.js" defer></script>
     <script src="../js/4-op-een-rij.js" defer></script>
+
 </head>
 
 </head>
@@ -22,6 +24,7 @@
         <nav>
             <a href="../pages/login.php">Login</a>
             <a href="../pages/profile.php">Profiel</a>
+            <a href="../pages/vrienden.php">Vrienden</a>
             <a href="#">Games</a>
         </nav>
     </header>
