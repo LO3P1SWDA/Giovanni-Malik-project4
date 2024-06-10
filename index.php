@@ -11,6 +11,9 @@
         <link rel="stylesheet" href="css/style.css">
         <script src="js/home.js" defer></script>
         <script src="js/vrienden.js" defer></script>
+        <script src="js/login.js" defer></script>
+        <script src="js/gamestate.js" defer></script>
+        <script src="js/4-op-een-rij.js" defer></script>
 </head>
 
 <body>
@@ -22,7 +25,7 @@
                         <a href="pages/login.php">Login</a>
                         <a href="pages/profile.php">Profiel</a>
                         <a href="pages/vrienden.php">Vrienden</a>
-                        <a href="#">Games</a>
+                        <a href="pages/games.php">Games</a>
                 </nav>
         </header>
         <main>
@@ -35,7 +38,7 @@
                                 alt="Game 1" onclick="openGamePage('game1.html')">
                         <img src="https://cdn.iconscout.com/icon/free/png-256/free-hang-1551091-1315157.png"
                                 alt="Game 2" onclick="openGamePage('game2.html')">
-                                <img src="https://kmtools.com/cdn/shop/products/Connect4CoverPic.png?v=1666200673&width=3333"
+                        <img src="https://kmtools.com/cdn/shop/products/Connect4CoverPic.png?v=1666200673&width=3333"
                                 alt="Game 3" onclick="openGamePage('Pages/4-op-een-rij.php')">
                         <img src="https://1000logos.net/wp-content/uploads/2023/05/Wordle-Emblem.png" alt="Game 4"
                                 onclick="openGamePage('game4.html')">
