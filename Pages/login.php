@@ -112,7 +112,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['username']) && isset($
 }
 
 $conn->close();
-print_r($_SESSION);
 ?>
 
 <?php include "../headerNfooter/footer.php";?>
