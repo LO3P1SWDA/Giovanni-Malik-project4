@@ -1,4 +1,11 @@
 <?php include "../headerNfooter/header.php"; ?>
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php"); // Redirect to login page
+    exit();
+}
+?>
 <div class="friend-page">
     <input type="text" id="searchBox" placeholder="Zoek naar een vriend...">
     <ul id="userList">
@@ -9,7 +16,6 @@
         }
 
         
-        session_start();
         $user_id = $_SESSION['user_id'];
 
         $sql = "SELECT id, gebruikersnaam FROM gebruikers WHERE NOT id = ?";

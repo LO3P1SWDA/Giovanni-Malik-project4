@@ -82,7 +82,7 @@ echo "<h1 class='ProfileBadges'>BADGES:</h1><br><ul>";
 while ($row = $result->fetch_assoc()) {
     $badge_name = htmlspecialchars($row['naam']);
     $badge_image = htmlspecialchars($row['image']);
-    echo "<li><img src='$badge_image' alt='$badge_name' title='$badge_name'></li>";
+    echo "<li><img class='badgesFoto' src='$badge_image' alt='$badge_name' title='$badge_name'></li><br>";
 }
 echo "</ul>";
 

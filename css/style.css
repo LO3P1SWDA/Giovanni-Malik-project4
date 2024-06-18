@@ -493,3 +493,119 @@ button:hover {
     width: 150px;
     height: 150px;
 }
+
+#memory-game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px 20px 0px;
+    background-color: #00b287;
+    border-radius: 10%;
+    width: 32%;
+    position: relative;
+    left: 35%;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 10px;
+}
+
+.card {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform: scale(1);
+    transition: transform 0.3s;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    background-color: #ffffff;
+    border-radius: 10%;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: transform 0.6s, opacity 0.6s;
+}
+
+.card .back {
+    transform: rotateY(0);
+    opacity: 1;
+}
+
+.card .front {
+    transform: rotateY(180deg);
+    opacity: 0;
+}
+
+.card.flipped .front,
+.card.matched .front {
+    transform: rotateY(0);
+    opacity: 1;
+}
+
+.card.flipped .back,
+.card.matched .back {
+    opacity: 0;
+}
+
+.card.matched img {
+    opacity: 0.8;
+    animation: match 0.6s forwards;
+}
+
+.card.mismatch img {
+    animation: mismatch 1s ease-in;
+}
+
+.card.disabled {
+    pointer-events: none;
+}
+
+@keyframes match {
+    0% { transform: scale(1); }
+    10% { transform: scale(0.7); }
+    20% { transform: scale(1.1); }
+    30% { transform: scale(0.9); }
+    40% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    60% { transform: scale(0.7); }
+    70% { transform: scale(1.1); }
+    80% { transform: scale(0.6); }
+    90% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes mismatch {
+    0% { transform: translateY(0); }
+    25% { transform: translateY(-10px); }
+    50% { transform: translateY(10px); }
+    75% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.card.match {
+    animation: match-color 1s forwards;
+}
+
+.card.mismatch {
+    animation: mismatch-color 1s forwards;
+}
+
+@keyframes mismatch-color {
+    0% { background-color: red; }
+    100% { background-color: red; }
+}
+
+.MTitle {
+    position: relative;
+    left: 47%;
+}
