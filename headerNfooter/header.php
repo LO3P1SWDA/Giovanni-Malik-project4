@@ -13,6 +13,7 @@
     <script src="../js/vrienden.js" defer></script>    
     <script src="../js/login.js" defer></script>
     <script src="../js/4-op-een-rij.js" defer></script>
+    <script src="../js/Tic-Tac-Toe.js" defer></script>
 
 </head>
 

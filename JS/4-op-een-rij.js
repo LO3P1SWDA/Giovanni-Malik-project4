@@ -19,7 +19,6 @@ function setGame() {
     gameOver = false;
     currPlayer = playerRed;
 
-    // Clear the board element
     document.getElementById("board").innerHTML = "";
 
     for (let r = 0; r < rows; r++) {
@@ -36,7 +35,6 @@ function setGame() {
         board.push(row);
     }
 
-    // Clear the winner text
     document.getElementById("winner").innerText = "";
 }
 
