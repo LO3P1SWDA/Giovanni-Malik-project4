@@ -1,13 +1,14 @@
-var playerRed = "R";
-var playerYellow = "Y";
-var currPlayer = playerRed;
+let playerRed = "You";
+let playerYellow = "Computer/Friend";
+let currPlayer = playerRed;
 
-var gameOver = false;
-var board;
-var currColumns;
+let gameOver = false;
+let board;
+let currColumns;
+let startTime; // Declare startTime globally
 
-var rows = 6;
-var columns = 7;
+let rows = 6;
+let columns = 7;
 
 window.onload = function() {
     setGame();
@@ -18,6 +19,7 @@ function setGame() {
     currColumns = [5, 5, 5, 5, 5, 5, 5];
     gameOver = false;
     currPlayer = playerRed;
+    startTime = new Date(); // Set startTime when the game begins
 
     document.getElementById("board").innerHTML = "";
 
@@ -38,7 +40,7 @@ function setGame() {
     document.getElementById("winner").innerText = "";
 }
 
-function setPiece() {
+async function setPiece() {
     if (gameOver) {
         return;
     }
@@ -69,76 +71,148 @@ function setPiece() {
 }
 
 function checkWinner() {
-    // Horizontaal
+    // Check for horizontal wins
     for (let r = 0; r < rows; r++) {
-        for (let c = 0; c < columns - 3; c++) {
-            if (board[r][c] != ' ' && board[r][c] == board[r][c + 1] && board[r][c + 1] == board[r][c + 2] && board[r][c + 2] == board[r][c + 3]) {
-                setWinner(r, c);
+        for (let c = 0; c <= columns - 4; c++) {
+            if (
+                board[r][c] !== ' ' &&
+                board[r][c] === board[r][c + 1] &&
+                board[r][c] === board[r][c + 2] &&
+                board[r][c] === board[r][c + 3]
+            ) {
+                gameOver = true;
+                document.getElementById("winner").innerText = `${board[r][c]} wins!`;
+                displayHighscoreAndOptions();
                 return;
             }
         }
     }
 
-    // Verticaal
+    // Check for vertical wins
     for (let c = 0; c < columns; c++) {
-        for (let r = 0; r < rows - 3; r++) {
-            if (board[r][c] != ' ' && board[r][c] == board[r + 1][c] && board[r + 1][c] == board[r + 2][c] && board[r + 2][c] == board[r + 3][c]) {
-                setWinner(r, c);
+        for (let r = 0; r <= rows - 4; r++) {
+            if (
+                board[r][c] !== ' ' &&
+                board[r][c] === board[r + 1][c] &&
+                board[r][c] === board[r + 2][c] &&
+                board[r][c] === board[r + 3][c]
+            ) {
+                gameOver = true;
+                document.getElementById("winner").innerText = `${board[r][c]} wins!`;
+                displayHighscoreAndOptions();
                 return;
             }
         }
     }
 
-    // Anti-diagonaal
-    for (let r = 0; r < rows - 3; r++) {
-        for (let c = 0; c < columns - 3; c++) {
-            if (board[r][c] != ' ' && board[r][c] == board[r + 1][c + 1] && board[r + 1][c + 1] == board[r + 2][c + 2] && board[r + 2][c + 2] == board[r + 3][c + 3]) {
-                setWinner(r, c);
+    // Check for diagonal wins (positive slope)
+    for (let r = 0; r <= rows - 4; r++) {
+        for (let c = 0; c <= columns - 4; c++) {
+            if (
+                board[r][c] !== ' ' &&
+                board[r][c] === board[r + 1][c + 1] &&
+                board[r][c] === board[r + 2][c + 2] &&
+                board[r][c] === board[r + 3][c + 3]
+            ) {
+                gameOver = true;
+                document.getElementById("winner").innerText = `${board[r][c]} wins!`;
+                displayHighscoreAndOptions();
                 return;
             }
         }
     }
 
-    // Diagonaal
+    // Check for diagonal wins (negative slope)
     for (let r = 3; r < rows; r++) {
-        for (let c = 0; c < columns - 3; c++) {
-            if (board[r][c] != ' ' && board[r][c] == board[r - 1][c + 1] && board[r - 1][c + 1] == board[r - 2][c + 2] && board[r - 2][c + 2] == board[r - 3][c + 3]) {
-                setWinner(r, c);
+        for (let c = 0; c <= columns - 4; c++) {
+            if (
+                board[r][c] !== ' ' &&
+                board[r][c] === board[r - 1][c + 1] &&
+                board[r][c] === board[r - 2][c + 2] &&
+                board[r][c] === board[r - 3][c + 3]
+            ) {
+                gameOver = true;
+                document.getElementById("winner").innerText = `${board[r][c]} wins!`;
+                displayHighscoreAndOptions();
                 return;
             }
         }
     }
 
-    // Controleer of het bord vol is
-    let isDraw = true;
-    for (let c = 0; c < columns; c++) {
-        if (currColumns[c] >= 0) {
-            isDraw = false;
-            break;
+    // Check for tie
+    let isTie = true;
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < columns; c++) {
+            if (board[r][c] === ' ') {
+                isTie = false;
+                break;
+            }
         }
+        if (!isTie) break;
     }
-
-    if (isDraw) {
-        setDraw();
+    if (isTie) {
+        gameOver = true;
+       
+        document.getElementById("winner").innerText = "It's a tie!";
+        displayHighscoreAndOptions();
+        return;
     }
 }
 
-function setWinner(r, c) {
-    let winner = document.getElementById("winner");
-    if (board[r][c] == playerRed) {
-        winner.innerText = "Red Wins";
-    } else {
-        winner.innerText = "Yellow Wins";
-    }
-    gameOver = true;
+function calculateHighscore() {
+    let endTime = new Date(); 
+    let timeTakenInSeconds = Math.floor((endTime - startTime) / 1000);
+    let highscore = 1500 - timeTakenInSeconds; // Calculate highscore
+    return Math.max(0, highscore); // Ensure highscore is non-negative
+}
+function displayHighscoreAndOptions() {
+    // Get the dynamically calculated highscore
+    let highscore = calculateHighscore(); // Replace with your function to calculate highscore
+
+    // Display the highscore
+    document.getElementById("highscore").innerText = "Your Highscore: " + highscore;
+
+    // Show the options to save or delete the highscore
+    document.getElementById("saveBtn").style.display = "block";
+    document.getElementById("deleteBtn").style.display = "block";
 }
 
-function setDraw() {
-    let winner = document.getElementById("winner");
-    winner.innerText = "Draw";
-    gameOver = true;
+function saveHighscore() {
+    let highscore = calculateHighscore();
+    let data = {
+        game_id: 2, // Example game ID, replace with your actual game ID
+        highscore: highscore
+    };
+
+    $.ajax({
+        url: 'save_highscore.php',
+        type: 'POST',
+        data: JSON.stringify(data),
+        contentType: 'application/json',
+        success: function(response) {
+            console.log(response);
+            alert("Highscore saved successfully!");
+            location.reload(); // Refresh the page
+        },
+        error: function(xhr, status, error) {
+            console.error('Error saving highscore:', error);
+            alert("Error saving highscore!");
+        }
+    });
 }
 
-function restartGame() {
-    setGame();
+function deleteHighscore() {
+    $.ajax({
+        url: 'delete_highscore.php',
+        type: 'POST',
+        success: function(response) {
+            console.log(response);
+            alert("Highscore deleted successfully!");
+            location.reload(); // Refresh the page
+        },
+        error: function(xhr, status, error) {
+            console.error('Error deleting highscore:', error);
+            alert("Error deleting highscore!");
+        }
+    });
 }

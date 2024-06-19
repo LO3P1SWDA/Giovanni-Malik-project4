@@ -1,5 +1,4 @@
 <?php include "../headerNfooter/header.php";?>
-
 <?php
 session_start();
 $conn = new mysqli("localhost", "root", "", "pixelplayground");
@@ -21,20 +20,11 @@ if (isset($_SESSION['username'])) {
     header('Location: login.php');
     exit();
 }
-
-print_r($_SESSION);
 ?>
 
 <a class="myV" href="Mijnvrienden.php">Mijn Vrienden</a>
 
 <?php
-$conn = new mysqli("localhost", "root", "", "pixelplayground");
-
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
 $user_id = $_SESSION['user_id'] ?? 1; 
 
 $sql = "SELECT 
@@ -79,6 +69,25 @@ if ($current_game != '') {
 }
 
 $stmt->close();
+
+// Fetch badges after closing the previous statement
+$sql = "SELECT badges.id, badges.naam, badges.badge_condition, badges.image 
+        FROM gebruiker_badge 
+        INNER JOIN badges ON gebruiker_badge.badge_id = badges.id 
+        WHERE gebruiker_id = $user_id";
+$result = $conn->query($sql);
+echo "<h1>Badges:</h1>";
+if ($result->num_rows > 0) {
+    // Output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "<h3>{$row['naam']}</h3>";
+        echo "<img class='badgesFoto' src='{$row['image']}' alt='{$row['naam']}'><br><br>";
+    }
+} else {
+    echo "No badges earned yet.<br><br>";
+}
+
+// Close database connection
 $conn->close();
 ?>
 

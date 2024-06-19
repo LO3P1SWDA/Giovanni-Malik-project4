@@ -11,18 +11,20 @@
         <link rel="stylesheet" href="css/style.css">
         <script src="js/home.js" defer></script>
         <script src="js/vrienden.js" defer></script>
+        <script src="js/login.js" defer></script>
+        <script src="js/4-op-een-rij.js" defer></script>
 </head>
 
 <body>
         <header>
                 <img class="logo"
                         src="https://static.wixstatic.com/media/72c1e2_3044305cde3e46d19101e9905d33a180~mv2.png/v1/fill/w_370,h_230,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Pixel%20Playground%20_Logo%20full%20colors%20%2B%20elements%20NO%20R.png"
-                        alt="logo">
+                        alt="logo" onclick="openGamePage('index.php')">
                 <nav>
                         <a href="pages/login.php">Login</a>
                         <a href="pages/profile.php">Profiel</a>
                         <a href="pages/vrienden.php">Vrienden</a>
-                        <a href="#">Games</a>
+                        <a href="pages/games.php">Games</a>
                 </nav>
         </header>
         <main>
@@ -35,7 +37,7 @@
                                 alt="Game 1" onclick="openGamePage('game1.html')">
                         <img src="https://cdn.iconscout.com/icon/free/png-256/free-hang-1551091-1315157.png"
                                 alt="Game 2" onclick="openGamePage('game2.html')">
-                                <img src="https://kmtools.com/cdn/shop/products/Connect4CoverPic.png?v=1666200673&width=3333"
+                        <img src="https://kmtools.com/cdn/shop/products/Connect4CoverPic.png?v=1666200673&width=3333"
                                 alt="Game 3" onclick="openGamePage('Pages/4-op-een-rij.php')">
                         <img src="https://1000logos.net/wp-content/uploads/2023/05/Wordle-Emblem.png" alt="Game 4"
                                 onclick="openGamePage('game4.html')">

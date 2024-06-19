@@ -4,6 +4,7 @@ body {
     background-color: #1f106b;
     color: white;
     font-family: 'Kanit', sans-serif;
+    overflow-x: hidden;
 }
 
 header {
@@ -32,21 +33,26 @@ nav a {
     border-radius: 10px;
     height: 5vh;
     padding: 1vh 1vw;
+    transition: transform 3s ease-in-out; /* Added transition for smooth animation */
 }
 
-nav>a:first-child {
+nav a:hover {
+    transform: rotate(360deg); /* Added transform to rotate the element */
+}
+
+nav > a:first-child {
     background-color: #f03f3a;
 }
 
-nav>a:nth-child(2) {
+nav > a:nth-child(2) {
     background-color: #fcc746;
 }
 
-nav>a:nth-child(3) {
+nav > a:nth-child(3) {
     background-color: #00b287;
 }
 
-nav>a:nth-child(4) {
+nav > a:nth-child(4) {
     background-color: #b2006b;
 }
 
@@ -94,41 +100,22 @@ footer a {
     grid-area: social;
 }
 
-.socials>a {
+.socials > a {
     border-radius: 10px;
     font-size: 20px;
     padding: 1vh 1vw;
 }
 
-.socials>a:first-child {
+.socials > a:first-child {
     background-color: #f03f3a;
 }
 
-.socials>a:nth-child(2) {
+.socials > a:nth-child(2) {
     background-color: #fcc746;
 }
 
-.socials>a:nth-child(3) {
+.socials > a:nth-child(3) {
     background-color: #00b287;
-}
-
-.main_login {
-    width: 350px;
-    height: 600px;
-    background: red;
-    overflow: hidden;
-    background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/ cover;
-    border-radius: 10px;
-    box-shadow: 5px 20px 50px #000;
-}
-
-body {
-    display: grid;
-    place-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #1f106b; 
-    font-family: 'Kanit', sans-serif; 
 }
 
 .login_body {
@@ -142,12 +129,11 @@ body {
     position: relative;
     width: 650px;
     height: 600px;
+    overflow: hidden;
     background: url("https://doc-08-2c-docs.googleusercontent.com/docs/securesc/68c90smiglihng9534mvqmq1946dmis5/fo0picsp1nhiucmc0l25s29respgpr4j/1631524275000/03522360960922298374/03522360960922298374/1Sx0jhdpEpnNIydS4rnN4kHSJtU1EyWka?e=view&authuser=0&nonce=gcrocepgbb17m&user=03522360960922298374&hash=tfhgbs86ka6divo3llbvp93mg4csvb38") no-repeat center/cover;
     border-radius: 10px;
     box-shadow: 5px 20px 50px #000;
 }
-
-
 
 #chk {
     display: none;
@@ -190,6 +176,7 @@ label {
     outline: none;
     border-radius: 5px;
 }
+
 .input-login {
     width: 60%;
     height: 30px;
@@ -233,23 +220,6 @@ button {
     transition: .2s ease-in;
     cursor: pointer;
 }
-.button-login {
-    width: 60%;
-    height: 60px;
-    margin: 10px auto;
-    justify-content: center;
-    display: block;
-    color: #fff;
-    background: #573b8a;
-    font-size: 1em;
-    font-weight: bold;
-    margin-top: 30px;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    transition: .2s ease-in;
-    cursor: pointer;
-}
 
 button:hover {
     background: #6d44b8;
@@ -263,8 +233,6 @@ button:hover {
     transition: .8s ease-in-out;
 }
 
-
-
 #chk:checked ~ .login {
     transform: translateY(-200px);
 }
@@ -276,14 +244,6 @@ button:hover {
 #chk:checked ~ .signup label {
     font-size: 2.3em;
 }
-
-.forgot-password{
-    justify-content: center;
-    text-align: center;
-}
-
-
-
 
 .ScoreboardTitle {
     background-color: #fcc746;
@@ -304,8 +264,7 @@ button:hover {
     margin-left: 25vw;
 }
 
-
-.WachtwoordSwitch label{
+.WachtwoordSwitch label {
     color: #fff;
     font-size: 20px;
     justify-content: center;
@@ -315,8 +274,8 @@ button:hover {
     transition: .5s ease-in-out;
 }
 
-.WachtwoordSwitch input{
-     width: 60%;
+.WachtwoordSwitch input {
+    width: 60%;
     height: 10px;
     background: #e0dede;
     justify-content: center;
@@ -328,7 +287,7 @@ button:hover {
     border-radius: 5px;
 }
 
-.wSwitch{
+.wSwitch {
     background: #10c08b;
     border-radius: 10px;
     padding: 1vh 1vw;
@@ -336,7 +295,7 @@ button:hover {
     color: white;
 }
 
-.gSwitch{
+.gSwitch {
     background: #c0104e;
     border-radius: 10px;
     padding: 1vh 1vw;
@@ -344,20 +303,20 @@ button:hover {
     color: white;
 }
 
-.voegVriend{
+.voegVriend {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.voegBtn{
+.voegBtn {
     background-color: #859d0e;
     width: 350px;
     margin-left: 50px;
 }
 
-.myV{
+.myV {
     background-color: #c4f435;
     border-radius: 10px;
     padding: 1vh 1vw;
@@ -367,7 +326,7 @@ button:hover {
     font-size: 20px;
 }
 
-.ProfileHS{
+.ProfileHS {
     background-color: #e73415;
     border-radius: 10px;
     padding: 1vh 1vw;
@@ -377,129 +336,14 @@ button:hover {
     max-width: 35%;
 }
 
-.verzoek{
+.verzoek {
     background-color: #e73415;
     border-radius: 10px;
     padding: 1vh 1vw;
     text-decoration: none;
     color: #ffffff;
-    font-size: 20px;  
+    font-size: 20px;
     width: 40%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-left: 30%;
-}
-
-.Friend{
-    background-color: #bc30ae;
-    border-radius: 10px;
-    padding: 1vh 1vw;
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.vwVriend{
-    background-color: #0e9d72;
-    width: 350px;
-    margin-left: 50px;
-}
-
-#board {
-    height: 540px;
-    width: 630px;
-    background-color: rgb(106, 195, 243);
-    border: 10px solid rgb(38, 64, 132);
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.tile {
-    height: 70px;
-    width: 70px;
-    margin: 5px;
-    background-color: white;
-    border-radius: 50%;
-    border: 5px solid rgb(38, 64, 132);
-}
-
-.red-piece {
-    background-color: red;
-}
-
-.yellow-piece {
-    background-color: yellow;
-}
-
-#restart-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 16px;
-    width: 150px;
-}
-
-section {
-    text-align: center;
-}
-
-.cell {
-    font-family: "Permanent Marker", cursive;
-    width: 100px;
-    height: 100px;
-    border: 2px solid #ecd7ba;
-    cursor: pointer;
-    line-height: 100px;
-    font-size: 60px;
-}
-
-.cell {
-    transition: transform 0.3s ease;
-}
-
-@keyframes scaleAnimation {
-    0% { transform: scale(0); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-}
-
-.played {
-    animation: scaleAnimation 0.3s ease;
-}
-.game-title {
-    font-size: 50px;
-    color: #ffffff;
-    margin: 50px auto;
-    opacity: .8;
-}
-
-.TicTacToeCells {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    width: 306px;
-    margin: 10px auto;
-    background-color: #3a3c3e;
-    color: #04c0b2;
-}
-
-.game-status {
-    font-size: 50px;
-    color: #1ed86c;
-    margin: 20px auto;
-}
-
-.game-restart {
-    width: 200px;
-    border-radius: 5px;
-    height: 50px;
-    font-size: 25px;
-    color: #000000;
-}
-
-.game-restart:hover {
-    background-color: #1ed86c;
-}
-
+    justify-content
