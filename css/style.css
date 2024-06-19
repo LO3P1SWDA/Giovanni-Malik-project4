@@ -40,22 +40,21 @@ nav a:hover {
     transform: rotate(360deg); /* Added transform to rotate the element */
 }
 
-nav>a:first-child {
+nav > a:first-child {
     background-color: #f03f3a;
 }
 
-nav>a:nth-child(2) {
+nav > a:nth-child(2) {
     background-color: #fcc746;
 }
 
-nav>a:nth-child(3) {
+nav > a:nth-child(3) {
     background-color: #00b287;
 }
 
-nav>a:nth-child(4) {
+nav > a:nth-child(4) {
     background-color: #b2006b;
 }
-
 
 .slideshow {
     position: relative;
@@ -101,21 +100,21 @@ footer a {
     grid-area: social;
 }
 
-.socials>a {
+.socials > a {
     border-radius: 10px;
     font-size: 20px;
     padding: 1vh 1vw;
 }
 
-.socials>a:first-child {
+.socials > a:first-child {
     background-color: #f03f3a;
 }
 
-.socials>a:nth-child(2) {
+.socials > a:nth-child(2) {
     background-color: #fcc746;
 }
 
-.socials>a:nth-child(3) {
+.socials > a:nth-child(3) {
     background-color: #00b287;
 }
 
@@ -135,8 +134,6 @@ footer a {
     border-radius: 10px;
     box-shadow: 5px 20px 50px #000;
 }
-
-
 
 #chk {
     display: none;
@@ -179,6 +176,7 @@ label {
     outline: none;
     border-radius: 5px;
 }
+
 .input-login {
     width: 60%;
     height: 30px;
@@ -235,8 +233,6 @@ button:hover {
     transition: .8s ease-in-out;
 }
 
-
-
 #chk:checked ~ .login {
     transform: translateY(-200px);
 }
@@ -268,8 +264,7 @@ button:hover {
     margin-left: 25vw;
 }
 
-
-.WachtwoordSwitch label{
+.WachtwoordSwitch label {
     color: #fff;
     font-size: 20px;
     justify-content: center;
@@ -279,8 +274,8 @@ button:hover {
     transition: .5s ease-in-out;
 }
 
-.WachtwoordSwitch input{
-     width: 60%;
+.WachtwoordSwitch input {
+    width: 60%;
     height: 10px;
     background: #e0dede;
     justify-content: center;
@@ -292,7 +287,7 @@ button:hover {
     border-radius: 5px;
 }
 
-.wSwitch{
+.wSwitch {
     background: #10c08b;
     border-radius: 10px;
     padding: 1vh 1vw;
@@ -300,7 +295,7 @@ button:hover {
     color: white;
 }
 
-.gSwitch{
+.gSwitch {
     background: #c0104e;
     border-radius: 10px;
     padding: 1vh 1vw;
@@ -308,20 +303,20 @@ button:hover {
     color: white;
 }
 
-.voegVriend{
+.voegVriend {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
 
-.voegBtn{
+.voegBtn {
     background-color: #859d0e;
     width: 350px;
     margin-left: 50px;
 }
 
-.myV{
+.myV {
     background-color: #c4f435;
     border-radius: 10px;
     padding: 1vh 1vw;
@@ -331,7 +326,7 @@ button:hover {
     font-size: 20px;
 }
 
-.ProfileHS{
+.ProfileHS {
     background-color: #e73415;
     border-radius: 10px;
     padding: 1vh 1vw;
@@ -341,271 +336,14 @@ button:hover {
     max-width: 35%;
 }
 
-.verzoek{
+.verzoek {
     background-color: #e73415;
     border-radius: 10px;
     padding: 1vh 1vw;
     text-decoration: none;
     color: #ffffff;
-    font-size: 20px;  
+    font-size: 20px;
     width: 40%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-left: 30%;
-}
-
-.Friend{
-    background-color: #bc30ae;
-    border-radius: 10px;
-    padding: 1vh 1vw;
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.vwVriend{
-    background-color: #0e9d72;
-    width: 350px;
-    margin-left: 50px;
-}
-
-#board {
-    height: 540px;
-    width: 630px;
-    background-color: rgb(106, 195, 243);
-    border: 10px solid rgb(38, 64, 132);
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.tile {
-    height: 70px;
-    width: 70px;
-    margin: 5px;
-    background-color: white;
-    border-radius: 50%;
-    border: 5px solid rgb(38, 64, 132);
-}
-
-.red-piece {
-    background-color: red;
-}
-
-.yellow-piece {
-    background-color: yellow;
-}
-
-#restart-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    font-size: 16px;
-    width: 150px;
-}
-
-#searchBox{
-    position: relative;
-    left: 35%;
-    padding: 2vh 2vw;
-    width: 30%;
-    border-radius: 15px;
-}
-
-#saveBtn,
-#deleteBtn {
-    display: none; /* Initially hide the buttons */
-}
-
-.games-overview {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    padding: 20px;
-}
-
-.game-card {
-    background-color: #ffffff;
-    border: 1px solid #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    text-align: center;
-}
-
-.game-card img {
-    width: 300px;
-    height: 300px;
-    border-radius: 8px;
-}
-
-.game-card h2 {
-    font-size: 1.5em;
-    margin: 10px 0;
-}
-
-.game-card p {
-    font-size: 1em;
-    color: #555;
-}
-
-.game-card a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.game-card a:hover {
-    background-color: #0056b3;
-}
-
-.BadgesKnop{
-    background-color: #79f798;
-    border-radius: 10px;
-    padding: 1vh 1vw;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-    margin: auto;
-}
-
-.badge{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.badgesFoto{
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-}
-
-#memory-game-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0px 20px 0px;
-    background-color: #00b287;
-    border-radius: 10%;
-    width: 32%;
-    position: relative;
-    left: 35%;
-}
-
-.game-board {
-    display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-gap: 10px;
-}
-
-.card {
-    width: 100px;
-    height: 100px;
-    position: relative;
-    transform: scale(1);
-    transition: transform 0.3s;
-    cursor: pointer;
-    transform-style: preserve-3d;
-    background-color: #ffffff;
-    border-radius: 10%;
-}
-
-.card img {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    backface-visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: transform 0.6s, opacity 0.6s;
-}
-
-.card .back {
-    transform: rotateY(0);
-    opacity: 1;
-}
-
-.card .front {
-    transform: rotateY(180deg);
-    opacity: 0;
-}
-
-.card.flipped .front,
-.card.matched .front {
-    transform: rotateY(0);
-    opacity: 1;
-}
-
-.card.flipped .back,
-.card.matched .back {
-    opacity: 0;
-}
-
-.card.matched img {
-    opacity: 0.8;
-    animation: match 0.6s forwards;
-}
-
-.card.mismatch img {
-    animation: mismatch 1s ease-in;
-}
-
-.card.disabled {
-    pointer-events: none;
-}
-
-@keyframes match {
-    0% { transform: scale(1); }
-    10% { transform: scale(0.7); }
-    20% { transform: scale(1.1); }
-    30% { transform: scale(0.9); }
-    40% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    60% { transform: scale(0.7); }
-    70% { transform: scale(1.1); }
-    80% { transform: scale(0.6); }
-    90% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-}
-
-@keyframes mismatch {
-    0% { transform: translateY(0); }
-    25% { transform: translateY(-10px); }
-    50% { transform: translateY(10px); }
-    75% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
-}
-
-.card.match {
-    animation: match-color 1s forwards;
-}
-
-.card.mismatch {
-    animation: mismatch-color 1s forwards;
-}
-
-@keyframes mismatch-color {
-    0% { background-color: red; }
-    100% { background-color: red; }
-}
-
-.MTitle {
-    position: relative;
-    left: 47%;
-}
+    justify-content

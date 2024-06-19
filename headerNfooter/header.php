@@ -13,10 +13,9 @@
     <script src="../js/vrienden.js" defer></script>    
     <script src="../js/login.js" defer></script>
     <script src="../js/4-op-een-rij.js" defer></script>
+    <script src="../js/Tic-Tac-Toe.js" defer></script>
     <script src="../js/memory.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
-
 </head>
 
 <body>
@@ -29,3 +28,6 @@
             <a href="../pages/games.php">Games</a>
         </nav>
     </header>
+</body>
+
+</html>
