@@ -34,7 +34,7 @@
                         scala aan spellen om uit te kiezen.</p>
                 <div class="slideshow">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Tic_tac_toe.svg/1200px-Tic_tac_toe.svg.png"
-                                alt="Game 1" onclick="openGamePage('game1.html')">
+                                alt="Game 1" onclick="openGamePage('Pages/Tic-Tac-Toe.php')">
                         <img src="https://cdn.iconscout.com/icon/free/png-256/free-hang-1551091-1315157.png"
                                 alt="Game 2" onclick="openGamePage('game2.html')">
                         <img src="https://kmtools.com/cdn/shop/products/Connect4CoverPic.png?v=1666200673&width=3333"

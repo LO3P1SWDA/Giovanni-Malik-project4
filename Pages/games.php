@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
         <img src="https://play-lh.googleusercontent.com/5ENdgpFsRhQt9y_ySp9UK_p-CL0TmhSwW5pKmmzzIW0OLFR3EvAtzAGm6c_IkkfgVg" alt="Tic Tac Toe">
         <h2>Boter kaas en eieren</h2>
         <p>Een klassiek spel waarbij twee spelers om beurten X en O op een 3x3 bord plaatsen. De eerste met drie op een rij wint.</p>
-        <a href="tictactoe.html">Speel nu</a>
+        <a href="Tic-Tac-Toe.php">Speel nu</a>
     </div>
     <div class="game-card">
         <img src="https://store-images.s-microsoft.com/image/apps.41929.13910108538401625.dfad4587-dfb3-4aa4-8bed-b5d2dd8fc79f.54781100-f7e4-4c22-89bf-257118f9ac23?mode=scale&q=90&h=1080&w=1920" alt="Vier op een rij">
