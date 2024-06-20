@@ -6,5 +6,6 @@
 <div id="highscore"></div>
 <button id="saveBtn" style="display:none;" onclick="saveHighscore()">Save Highscore</button>
 <button id="deleteBtn" style="display:none;" onclick="deleteHighscore()">Delete Highscore</button>
+<button id="restartBtn" onclick="restart()" style="display: none;">Restart Game</button>
 
 <?php include "../headerNfooter/footer.php"; ?>

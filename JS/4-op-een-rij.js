@@ -5,7 +5,9 @@ let currPlayer = playerRed;
 let gameOver = false;
 let board;
 let currColumns;
-let startTime; // Declare startTime globally
+let startTime;
+let calculatedHighscore; // Global variable to store the calculated highscore
+let playerWon = false; // Flag to indicate if the player won
 
 let rows = 6;
 let columns = 7;
@@ -19,7 +21,9 @@ function setGame() {
     currColumns = [5, 5, 5, 5, 5, 5, 5];
     gameOver = false;
     currPlayer = playerRed;
-    startTime = new Date(); // Set startTime when the game begins
+    startTime = new Date();
+    calculatedHighscore = null; // Reset highscore at the beginning of the game
+    playerWon = false; // Reset the win flag
 
     document.getElementById("board").innerHTML = "";
 
@@ -38,6 +42,8 @@ function setGame() {
     }
 
     document.getElementById("winner").innerText = "";
+    document.getElementById("restartBtn").style.display = "none"; // Hide restart button initially
+    hideHighscore(); // Initially hide highscore and related buttons
 }
 
 async function setPiece() {
@@ -82,6 +88,7 @@ function checkWinner() {
             ) {
                 gameOver = true;
                 document.getElementById("winner").innerText = `${board[r][c]} wins!`;
+                playerWon = board[r][c] === playerRed;
                 displayHighscoreAndOptions();
                 return;
             }
@@ -99,6 +106,7 @@ function checkWinner() {
             ) {
                 gameOver = true;
                 document.getElementById("winner").innerText = `${board[r][c]} wins!`;
+                playerWon = board[r][c] === playerRed;
                 displayHighscoreAndOptions();
                 return;
             }
@@ -116,6 +124,7 @@ function checkWinner() {
             ) {
                 gameOver = true;
                 document.getElementById("winner").innerText = `${board[r][c]} wins!`;
+                playerWon = board[r][c] === playerRed;
                 displayHighscoreAndOptions();
                 return;
             }
@@ -133,6 +142,7 @@ function checkWinner() {
             ) {
                 gameOver = true;
                 document.getElementById("winner").innerText = `${board[r][c]} wins!`;
+                playerWon = board[r][c] === playerRed;
                 displayHighscoreAndOptions();
                 return;
             }
@@ -152,9 +162,8 @@ function checkWinner() {
     }
     if (isTie) {
         gameOver = true;
-       
         document.getElementById("winner").innerText = "It's a tie!";
-        displayHighscoreAndOptions();
+        displayRestartButton();
         return;
     }
 }
@@ -163,25 +172,56 @@ function calculateHighscore() {
     let endTime = new Date(); 
     let timeTakenInSeconds = Math.floor((endTime - startTime) / 1000);
     let highscore = 1500 - timeTakenInSeconds; // Calculate highscore
+    console.log("Calculated Highscore inside calculateHighscore: ", highscore); // Log highscore here
     return Math.max(0, highscore); // Ensure highscore is non-negative
 }
+
 function displayHighscoreAndOptions() {
-    // Get the dynamically calculated highscore
-    let highscore = calculateHighscore(); // Replace with your function to calculate highscore
+    // Calculate highscore and store it in the global variable
+    calculatedHighscore = calculateHighscore();
+    console.log("Highscore in displayHighscoreAndOptions: ", calculatedHighscore); // Log highscore here
 
-    // Display the highscore
-    document.getElementById("highscore").innerText = "Your Highscore: " + highscore;
+    // Display the highscore using the stored value
+    document.getElementById("highscore").innerText = "Your Highscore: " + calculatedHighscore;
 
-    // Show the options to save or delete the highscore
-    document.getElementById("saveBtn").style.display = "block";
-    document.getElementById("deleteBtn").style.display = "block";
+    // Show the options based on whether the player won
+    if (playerWon) {
+        document.getElementById("saveBtn").style.display = "block";
+        document.getElementById("deleteBtn").style.display = "block";
+    } else {
+        document.getElementById("saveBtn").style.display = "none";
+        document.getElementById("deleteBtn").style.display = "none";
+        hideHighscore(); // Hide highscore and related buttons
+        displayRestartButton(); // Show restart button when player loses or ties
+    }
+}
+
+function displayRestartButton() {
+    // Display the restart button
+    document.getElementById("restartBtn").style.display = "block";
+}
+
+function hideHighscore() {
+    // Hide highscore display and buttons
+    document.getElementById("highscore").innerText = "";
+    document.getElementById("saveBtn").style.display = "none";
+    document.getElementById("deleteBtn").style.display = "none";
+}
+
+function restart() {
+    // Reset all game variables and elements
+    setGame();
+
+    // Hide the restart button again
+    document.getElementById("restartBtn").style.display = "none";
 }
 
 function saveHighscore() {
-    let highscore = calculateHighscore();
+    // Use the stored highscore value
+    console.log("Highscore in saveHighscore: ", calculatedHighscore); // Log highscore here
     let data = {
         game_id: 2, // Example game ID, replace with your actual game ID
-        highscore: highscore
+        highscore: calculatedHighscore
     };
 
     $.ajax({

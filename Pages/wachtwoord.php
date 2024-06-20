@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $new = password_hash($_POST['new_password'], PASSWORD_DEFAULT);
             $sql = "UPDATE `gebruikers` SET `wachtwoord` = '$new' WHERE `gebruikers`.`id` = '$user_id'";
             $conn->query($sql);
-            echo $sql;
+            // echo $sql;
         }else{
             echo "password not the same";
         }

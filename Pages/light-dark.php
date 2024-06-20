@@ -1,6 +1,6 @@
 <?php include "../headerNfooter/header.php";?>
 <div class="background"></div>
-<input type="checkbox" id="dark-mode">
+<input class="inputSwitch" type="checkbox" id="dark-mode">
   <label class="labelswitch" for="dark-mode"></label>
   <script>const darkModeCheckbox = document.getElementById('dark-mode');
 const backgroundDiv = document.querySelector('.background');

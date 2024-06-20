@@ -1,4 +1,3 @@
-<?php include "../headerNfooter/header.php"; ?>
 <?php
 session_start();
 $conn = new mysqli("localhost", "root", "", "pixelplayground");
@@ -12,6 +11,9 @@ if ($data && isset($data['game_id']) && isset($data['highscore'])) {
     // Sanitize the data
     $gameId = intval($data['game_id']);
     $highscore = intval($data['highscore']);
+
+    // Log the received highscore
+    error_log("Received highscore: " . $highscore);
 
     // Get the user ID from the session or request parameters
     $userId = $_SESSION['user_id']; // Assuming you have a user ID stored in a session
@@ -35,4 +37,3 @@ if ($data && isset($data['game_id']) && isset($data['highscore'])) {
     echo json_encode(array("message" => "Unable to save highscore. Invalid data"));
 }
 ?>
-<?php include "../headerNfooter/footer.php"; ?>

@@ -19,11 +19,17 @@ if ($action == 'accept') {
         $stmt->execute();
         $result = $stmt->get_result();
         $row = $result->fetch_assoc();
+        
+        // Debugging outputs
+        echo "sender_id: " . $row['sender_id'] . "<br>";
+        echo "receiver_id: " . $row['receiver_id'] . "<br>";
+        
         $stmt = $conn->prepare("INSERT INTO vrienden (gebruiker_id, vriend_id) VALUES (?, ?)");
         $stmt->bind_param("ii", $row['sender_id'], $row['receiver_id']);
         $stmt->execute();
     }
-} elseif ($action == 'ignore') {
+}
+elseif ($action == 'ignore') {
     $sql = "UPDATE vriendschaps_verzoek SET status = 'ignored' WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $request_id);
