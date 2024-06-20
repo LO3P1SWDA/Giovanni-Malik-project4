@@ -9,6 +9,8 @@
     <meta name="keywords" content="project 4, opdracht, Mbo, Rijnland, Leiden">
     <title>Project</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
     <script src="../js/home.js" defer></script>    
     <script src="../js/vrienden.js" defer></script>    
     <script src="../js/login.js" defer></script>

@@ -7,7 +7,7 @@
         <a href="https://www.instagram.com/jouwinstagrampagina">Instagram</a>
     </section>
 </footer>
-
+</div>
 </body>
 
 </html>
