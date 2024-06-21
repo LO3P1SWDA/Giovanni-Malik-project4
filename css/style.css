@@ -734,3 +734,79 @@ button:hover {
 .game-restart:hover {
   background-color: #1ed86c;
 }
+
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.carousel-container {
+    width: 300px;
+    text-align: center;
+}
+
+.carousel-item {
+    display: none;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-nav {
+    display: flex;
+    justify-content: space-between; 
+    animation: navButtonSlide 0.5s ease-in-out infinite alternate;
+}
+
+.carousel-image {
+    width: 100%;
+    max-height: 300px;
+    border-radius: 10%;
+    animation: scaleImage 1s ease-in-out infinite alternate;
+}
+
+@keyframes scaleImage {
+    0% {
+        transform: scale(1); /* Normal size */
+    }
+    50% {
+        transform: scale(1.1); /* Scale up */
+    }
+    100% {
+        transform: scale(1); /* Back to normal size */
+    }
+}
+
+@keyframes navButtonSlide {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-10px); /* Slide left */
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
+.carousel-info {
+    animation: infoSlideIn 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes infoSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
